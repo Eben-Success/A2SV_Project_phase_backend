@@ -8,6 +8,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PalindromeChecker", "Palind
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PalindromeChecker.Tests", "PalindromeChecker.Tests\PalindromeChecker.Tests.csproj", "{0402A680-5637-4F90-BEC9-8BBD41CA6BA3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetFrequency", "GetFrequency\GetFrequency.csproj", "{83EF7AA7-D57F-4577-AF18-6157AE21EEEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetFrequency.Tests", "GetFrequency.Tests\GetFrequency.Tests.csproj", "{F13D5447-43A0-4167-AA67-04D629F95D68}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +34,13 @@ Global
 		{0402A680-5637-4F90-BEC9-8BBD41CA6BA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0402A680-5637-4F90-BEC9-8BBD41CA6BA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0402A680-5637-4F90-BEC9-8BBD41CA6BA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83EF7AA7-D57F-4577-AF18-6157AE21EEEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83EF7AA7-D57F-4577-AF18-6157AE21EEEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83EF7AA7-D57F-4577-AF18-6157AE21EEEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83EF7AA7-D57F-4577-AF18-6157AE21EEEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F13D5447-43A0-4167-AA67-04D629F95D68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F13D5447-43A0-4167-AA67-04D629F95D68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F13D5447-43A0-4167-AA67-04D629F95D68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F13D5447-43A0-4167-AA67-04D629F95D68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
