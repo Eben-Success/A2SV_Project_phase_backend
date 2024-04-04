@@ -67,7 +67,7 @@ namespace ShapeHierarchy
         }
     }
 
-    // Utility method to print the shape's area
+    // Utility method 
     public static class ShapePrinter
     {
         public static void PrintShapeArea(Shape shape)
@@ -80,12 +80,12 @@ namespace ShapeHierarchy
     {
         static void Main()
         {
-            // Creating instances of derived classes
+  
             Circle circle = new Circle("Circle", 5);
             Rectangle rectangle = new Rectangle("Rectangle", 4, 6);
             Triangle triangle = new Triangle("Triangle", 3, 4);
 
-            // Demonstrating the usage of 'PrintShapeArea' method
+            
             ShapePrinter.PrintShapeArea(circle);
             ShapePrinter.PrintShapeArea(rectangle);
             ShapePrinter.PrintShapeArea(triangle);
