@@ -5,19 +5,20 @@ class Calculator{
     public static void Main(){
 
         //Instantiate UtilityClass Here
-        UtiltyClass utiltyClass = new UtiltyClass();
+        UtiltyClass utilityClass = new UtilityClass();
 
         Dictionary<string, int> dictionary = new Dictionary<string, int>();
     
         // Accept user input
         Console.Write("Enter your name: ");
-        string name = Console.ReadLine();
+        string? name = Console.ReadLine();
         Console.WriteLine($"Hello {name}!");
         Console.WriteLine("Enter the total subjects you have taken");
         int num = Convert.ToInt32(Console.ReadLine());
 
         int k = num;
 
+        // Get subject and grade from user
         while (k > 0){
             Console.WriteLine("Grade must be greater than 0");
             Console.Write("Enter each subject and respective grade Example: English, 10: ");
@@ -38,6 +39,7 @@ class Calculator{
             }
         }
         
+        // Display the subject and grade
         Console.WriteLine($"Hello {name}, ");
         Console.WriteLine($"Here are your respective subject and grade");
         Console.WriteLine("SUBJECT: GRADE");
@@ -46,13 +48,15 @@ class Calculator{
             Console.WriteLine($"{KeyValuePair.Key.ToUpper()}: {KeyValuePair.Value}");
         }
 
+        // Get the average grade
         int average = utiltyClass.GetAverageGrade(dictionary);
         Console.WriteLine($"Here is the average of your grade: {average}");
 
     }
 }
 
-class UtiltyClass{
+class UtilityClass{
+    // Calculate the average grade
     public int GetAverageGrade(Dictionary<string, int> dict)
     {
         int average = 0;
@@ -64,6 +68,7 @@ class UtiltyClass{
         return average / dict.Count;
     }
 
+    // Validate user input
     public bool ValidateInput(int grade){
         return grade > 0 && grade <= 100;
     }

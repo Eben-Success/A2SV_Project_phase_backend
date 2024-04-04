@@ -4,6 +4,7 @@ using System.Collections.Generic;
 class Program {
     static void Main(){
 
+        // Accept user input
         Console.Write("Enter a string: ");
         string s = Console.ReadLine();
 
@@ -14,6 +15,7 @@ class Program {
         }
 
 
+        //Get the frequency of characters in the string
         Dictionary<string, int> GetFrequency(string s){
             Dictionary<string,int> dictionary = new Dictionary<string,int>();
 

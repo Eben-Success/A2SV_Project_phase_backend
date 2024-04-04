@@ -5,6 +5,7 @@ class PalindromeChecker
     static void Main()
     {
 
+        // Accept user input
         Console.WriteLine("____Palindrome Checker____");
         Console.WriteLine("Enter a string to check if it is a palindrome: ");
         string str = Console.ReadLine();
@@ -18,6 +19,7 @@ class PalindromeChecker
             Console.WriteLine("The string is not a palindrome");
         }
         
+        // Check if the string is a palindrome
         static bool isPalindrome(string str)
         {
             int left = 0;
@@ -29,10 +31,8 @@ class PalindromeChecker
                 {
                     return false;
                 }
-
                 left++;
                 right--;
-
             }
 
             return true;
