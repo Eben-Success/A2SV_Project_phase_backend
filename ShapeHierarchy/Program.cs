@@ -1,11 +1,29 @@
-﻿using System;
+using System;
 
 namespace ShapeHierarchy
 {
-    // Base class - Shape
-    public abstract class Shape
+    class Program
     {
-        public string Name { get; set; }
+        static void Main()
+        {
+            Circle circle = new Circle("Circle", 5);
+            Rectangle rectangle = new Rectangle("Rectangle", 4, 6);
+            Triangle triangle = new Triangle("Triangle", 3, 4);
+
+            PrintShapeArea(circle);
+            PrintShapeArea(rectangle);
+            PrintShapeArea(triangle);
+        }
+
+        static void PrintShapeArea(Shape shape)
+        {
+            Console.WriteLine($"{shape.Name} Area: {shape.CalculateArea()}");
+        }
+    }
+
+    abstract class Shape
+    {
+        public string Name { get; private set; }
 
         public Shape(string name)
         {
@@ -15,10 +33,9 @@ namespace ShapeHierarchy
         public abstract double CalculateArea();
     }
 
-    // Derived class - Circle
-    public class Circle : Shape
+    class Circle : Shape
     {
-        public double Radius { get; set; }
+        public double Radius { get; private set; }
 
         public Circle(string name, double radius) : base(name)
         {
@@ -31,11 +48,10 @@ namespace ShapeHierarchy
         }
     }
 
-    // Derived class - Rectangle
-    public class Rectangle : Shape
+    class Rectangle : Shape
     {
-        public double Width { get; set; }
-        public double Height { get; set; }
+        public double Width { get; private set; }
+        public double Height { get; private set; }
 
         public Rectangle(string name, double width, double height) : base(name)
         {
@@ -49,11 +65,10 @@ namespace ShapeHierarchy
         }
     }
 
-    // Derived class - Triangle
-    public class Triangle : Shape
+    class Triangle : Shape
     {
-        public double Base { get; set; }
-        public double Height { get; set; }
+        public double Base { get; private set; }
+        public double Height { get; private set; }
 
         public Triangle(string name, double baseLength, double height) : base(name)
         {
@@ -64,31 +79,6 @@ namespace ShapeHierarchy
         public override double CalculateArea()
         {
             return (Base * Height) / 2;
-        }
-    }
-
-    // Utility method 
-    public static class ShapePrinter
-    {
-        public static void PrintShapeArea(Shape shape)
-        {
-            Console.WriteLine($"{shape.Name} Area: {shape.CalculateArea()}");
-        }
-    }
-
-    class Program
-    {
-        static void Main()
-        {
-  
-            Circle circle = new Circle("Circle", 5);
-            Rectangle rectangle = new Rectangle("Rectangle", 4, 6);
-            Triangle triangle = new Triangle("Triangle", 3, 4);
-
-            
-            ShapePrinter.PrintShapeArea(circle);
-            ShapePrinter.PrintShapeArea(rectangle);
-            ShapePrinter.PrintShapeArea(triangle);
         }
     }
 }
