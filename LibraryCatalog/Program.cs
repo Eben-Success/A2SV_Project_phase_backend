@@ -9,12 +9,12 @@ class Program
         Library library = new Library("Central Library", "123 Main St");
 
         // Add books
-        library.AddBook(new Book("The Catcher in the Rye", "J.D. Salinger", "978-0316769488", 1951));
-        library.AddBook(new Book("To Kill a Mockingbird", "Harper Lee", "978-0060935467", 1960));
+        library.AddBook(new Book("The Catcher", "Salinger", "978-0316769488", 1951));
+        library.AddBook(new Book("Mockingbird", "Harper Lee", "978-0060935467", 1960));
 
         // Add media items
         library.AddMediaItem(new MediaItem("Inception", "DVD", 148));
-        library.AddMediaItem(new MediaItem("The Dark Side of the Moon", "CD", 42));
+        library.AddMediaItem(new MediaItem("The Dark Side", "CD", 42));
 
         // Print catalog
         library.PrintCatalog();
