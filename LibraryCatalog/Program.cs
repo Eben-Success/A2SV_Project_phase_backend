@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
         // Create a library
         Library library = new Library("Central Library", "123 Main St");
@@ -79,7 +79,6 @@ class Library
         }
     }
 
-    // Bonus: Search method
     public List<string> Search(string keyword)
     {
         List<string> results = new List<string>();
