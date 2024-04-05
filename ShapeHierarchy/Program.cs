@@ -23,7 +23,7 @@ namespace ShapeHierarchy
 
     abstract class Shape
     {
-        public string Name { get; private set; }
+        public string Name { get; set; }
 
         public Shape(string name)
         {
