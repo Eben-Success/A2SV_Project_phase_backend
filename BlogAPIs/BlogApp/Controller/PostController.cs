@@ -43,7 +43,7 @@ namespace BlogApp.Controllers
         [HttpPost]
         public async Task<IActionResult> CreatePost(Post post){
             var postId = await postManager.CreatePost(post);
-
+            await _context.SaveChangesAsync();
             return CreatedAtAction(nameof(CreatePost), new {id = postId}, post);
         }
 

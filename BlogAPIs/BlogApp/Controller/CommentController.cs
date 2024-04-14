@@ -38,9 +38,9 @@ namespace BlogApp.Controllers;
 
         // Create Comment
         [HttpPost]
-        public async Task<IActionResult> CreateComment(int id, Comment comment){
+        public async Task<IActionResult> CreateComment(Comment comment){
             try{
-                var newCommentId = await commentManager.CreateComment(id, comment);
+                var newCommentId = await commentManager.CreateComment(comment);
                 return CreatedAtAction(nameof(CreateComment), new {id = newCommentId}, comment);
             }
             catch(Exception ex){
