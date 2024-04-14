@@ -1,7 +1,6 @@
 using BlogApp.Models;
 using BlogCrudApp.Data;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace BlogApp.Controllers;
 
@@ -21,7 +20,7 @@ namespace BlogApp.Controllers;
         // Get all Comments
         [HttpGet]
         public async Task<IActionResult> GetAllComment(){
-            var posts = await _context.Comments.ToListAsync();
+            var posts = await commentManager.GetAllComment();
             return Ok(posts);
         }
 
@@ -39,10 +38,10 @@ namespace BlogApp.Controllers;
 
         // Create Comment
         [HttpPost]
-        public async Task<IActionResult> CreateComment(Comment comment){
+        public async Task<IActionResult> CreateComment(int id, Comment comment){
             try{
-            await commentManager.CreateComment(comment);
-            return NoContent();
+                var newCommentId = await commentManager.CreateComment(id, comment);
+                return CreatedAtAction(nameof(CreateComment), new {id = newCommentId}, comment);
             }
             catch(Exception ex){
                 return BadRequest(ex.Message);

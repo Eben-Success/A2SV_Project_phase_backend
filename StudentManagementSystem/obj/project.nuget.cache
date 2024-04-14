@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZSIodhS9gqRaNJe42DWUVwecc5IaemDOvPNPtt4DNRXOroR+ns3kvo1q9We9wJyZBr0CiZPj++1AVjJdpV5vhA==",
+  "success": true,
+  "projectFilePath": "/Users/ebensuccess/Desktop/Dev/A2SV_Project_Phase/dotnet_projects/A2SV_Project_phase_backend/StudentManagementSystem/StudentManagementSystem.csproj",
+  "expectedPackageFiles": [
+    "/Users/ebensuccess/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

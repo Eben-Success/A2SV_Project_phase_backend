@@ -1,9 +1,9 @@
 using BlogApp.Models;
 using BlogCrudApp.Data;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
-namespace BlogApp.Controllers;
+namespace BlogApp.Controllers
+{
 
 
 [Route("api/[controller]")]
@@ -22,7 +22,7 @@ namespace BlogApp.Controllers;
         // Get all Posts
         [HttpGet]
         public async Task<IActionResult> GetAllPosts(){
-            var posts = await _context.Posts.ToListAsync();
+            var posts = await postManager.GetAllPosts();
             return Ok(posts);
         }
 
@@ -44,7 +44,7 @@ namespace BlogApp.Controllers;
         public async Task<IActionResult> CreatePost(Post post){
             var postId = await postManager.CreatePost(post);
 
-            return CreatedAtAction("CreatePost", postId, post);
+            return CreatedAtAction(nameof(CreatePost), new {id = postId}, post);
         }
 
         // Edit post: Update title or content
@@ -73,3 +73,4 @@ namespace BlogApp.Controllers;
             
         }
     }
+}

@@ -1,0 +1,5 @@
+/Users/ebensuccess/Desktop/Dev/A2SV_Project_Phase/dotnet_projects/A2SV_Project_phase_backend/Calculator/obj/Debug/net8.0/Calculator.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ebensuccess/Desktop/Dev/A2SV_Project_Phase/dotnet_projects/A2SV_Project_phase_backend/Calculator/obj/Debug/net8.0/Calculator.AssemblyInfoInputs.cache
+/Users/ebensuccess/Desktop/Dev/A2SV_Project_Phase/dotnet_projects/A2SV_Project_phase_backend/Calculator/obj/Debug/net8.0/Calculator.AssemblyInfo.cs
+/Users/ebensuccess/Desktop/Dev/A2SV_Project_Phase/dotnet_projects/A2SV_Project_phase_backend/Calculator/obj/Debug/net8.0/Calculator.csproj.CoreCompileInputs.cache
+/Users/ebensuccess/Desktop/Dev/A2SV_Project_Phase/dotnet_projects/A2SV_Project_phase_backend/Calculator/obj/Debug/net8.0/Calculator.sourcelink.json

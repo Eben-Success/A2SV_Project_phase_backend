@@ -35,11 +35,12 @@ namespace BlogApp.Controllers;
             return post;
         }
 
-        // Create Post]
+        // Create Post
         public async Task<int> CreatePost(Post post)
         {
             await _context.Posts.AddAsync(post);
             await _context.SaveChangesAsync();
+            
             return post.PostId;
         }
 

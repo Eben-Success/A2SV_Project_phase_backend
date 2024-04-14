@@ -1,0 +1,114 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "Fact/1.0.17": {
+        "type": "package",
+        "compile": {
+          "lib/Fact.dll": {}
+        },
+        "runtime": {
+          "lib/Fact.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Fact/1.0.17": {
+      "sha512": "N7ScGbM1lcSpXCxyszWxgfjH7mpSULgPdhabWqoQ4v++PXRTiXrTIrabtGpYRWODtiPO8swpe810rLbe6BCSlQ==",
+      "type": "package",
+      "path": "fact/1.0.17",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fact.1.0.17.nupkg.sha512",
+        "fact.nuspec",
+        "lib/Fact.dll"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "Fact >= 1.0.17"
+    ]
+  },
+  "packageFolders": {
+    "/Users/ebensuccess/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/ebensuccess/Desktop/Dev/A2SV_Project_Phase/dotnet_projects/A2SV_Project_phase_backend/GetFrequency/GetFrequency.csproj",
+      "projectName": "GetFrequency",
+      "projectPath": "/Users/ebensuccess/Desktop/Dev/A2SV_Project_Phase/dotnet_projects/A2SV_Project_phase_backend/GetFrequency/GetFrequency.csproj",
+      "packagesPath": "/Users/ebensuccess/.nuget/packages/",
+      "outputPath": "/Users/ebensuccess/Desktop/Dev/A2SV_Project_Phase/dotnet_projects/A2SV_Project_phase_backend/GetFrequency/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/ebensuccess/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      }
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "dependencies": {
+          "Fact": {
+            "target": "Package",
+            "version": "[1.0.17, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.203/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Fact 1.0.17' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Fact",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
+}

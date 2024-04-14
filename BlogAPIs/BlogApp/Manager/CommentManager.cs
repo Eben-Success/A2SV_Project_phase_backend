@@ -31,9 +31,17 @@ namespace BlogApp.Controllers;
         }
 
         // Create Comment
-        public async Task CreateComment(Comment comment){
+        public async Task<int> CreateComment(int id, Comment comment){
+            var post = await _context.Posts.FindAsync(id);
+
+            if (post == null){
+                throw new Exception("Invalid Post Id");
+            }
+
             await _context.Comments.AddAsync(comment);
             await _context.SaveChangesAsync();
+
+            return comment.CommentId;
         }
 
         // Edit Comment: Update content of comment

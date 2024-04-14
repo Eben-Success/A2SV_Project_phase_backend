@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "b152n25u3G2/AzaJFMxTXKnzWb83dt+DihdZmY/ll6IHbpXNhIQ0fBjiwlnU7n5Y6hOmFabrN1t/aSvWkIxK4Q==",
+  "success": true,
+  "projectFilePath": "/Users/ebensuccess/Desktop/Dev/A2SV_Project_Phase/dotnet_projects/A2SV_Project_phase_backend/GetFrequency/GetFrequency.csproj",
+  "expectedPackageFiles": [
+    "/Users/ebensuccess/.nuget/packages/fact/1.0.17/fact.1.0.17.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Fact 1.0.17' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Fact",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
+}
