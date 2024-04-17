@@ -1,5 +1,5 @@
-using BlogCrudApp.Data;
 using Microsoft.EntityFrameworkCore;
+using BlogCrudApp.Data;
 
 namespace BlogApp.Tests
 {
@@ -7,11 +7,14 @@ namespace BlogApp.Tests
     {
         public static ApiDbContext Generator()
         {
-            var options = new DbContextOptionsBuilder<ApiDbContext>()
-            .UseInMemoryDatabase(Guid.NewGuid().ToString())
-            .Options;
+            var optionsBuilder = new DbContextOptionsBuilder<ApiDbContext>()
+                .UseInMemoryDatabase("TestDb")
+                .Options;
 
-            return new ApiDbContext(options);
+            var context = new ApiDbContext(optionsBuilder);
+            context.Database.EnsureDeleted();
+            context.Database.EnsureCreated();
+            return context;
         }
     }
 }

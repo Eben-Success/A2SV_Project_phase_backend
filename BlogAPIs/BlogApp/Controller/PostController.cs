@@ -6,8 +6,8 @@ namespace BlogApp.Controllers
 {
 
 
-[Route("api/[controller]")]
-[ApiController]
+    [Route("api/[controller]")]
+    [ApiController]
 
     public class PostController : ControllerBase
     {
@@ -16,7 +16,7 @@ namespace BlogApp.Controllers
 
         public PostController(ApiDbContext context){
             _context = context;
-            postManager = new PostManager(context);
+            postManager = new PostManager(_context);
         }
 
         // Get all Posts

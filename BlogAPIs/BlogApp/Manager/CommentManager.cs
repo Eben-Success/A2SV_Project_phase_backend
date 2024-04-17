@@ -1,6 +1,5 @@
 using BlogApp.Models;
 using BlogCrudApp.Data;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace BlogApp.Controllers;
@@ -21,7 +20,7 @@ namespace BlogApp.Controllers;
         }
 
         public async Task<Comment> GetCommentById(int id){
-            var comment = await _context.Comments.FindAsync(id);
+            var comment = await _context.Comments.FirstOrDefaultAsync(x => x.CommentId == id);
 
             if (comment == null){
                 throw new Exception("Invalid comment Id");
@@ -49,7 +48,7 @@ namespace BlogApp.Controllers;
 
         // Edit Comment: Update content of comment
         public async Task EditCommentById(int id, Comment updatedComment){
-                var comment = await _context.Comments.FindAsync(id);
+                var comment = await _context.Comments.FirstOrDefaultAsync(x => x.CommentId == id);
 
                 if (comment == null){
                     throw new Exception("Invalid comment Id");
@@ -62,7 +61,7 @@ namespace BlogApp.Controllers;
 
         // Delete Comment By Id
         public async Task DeleteCommentById(int id){
-                var comment = await _context.Comments.FindAsync(id);
+                var comment = await _context.Comments.FirstOrDefaultAsync(x => x.CommentId == id);
 
                 if (comment == null){
                     throw new Exception("Invalid Id");

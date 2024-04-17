@@ -18,17 +18,8 @@ public class PostTest
     public async Task GetAllPost_ReturnsAllPost()
     {
         
-        var post1 = new Post 
-        {
-            Title = "Post Title",
-            Content = "Post Content"
-        };
-
-        var post2 = new Post 
-        {
-            Title = "Post Title",
-            Content = "Post Content"
-        };
+        var post1 = Helper.GeneratePost();
+        var post2 = Helper.GeneratePost();
 
         await _context.CreatePost(post1);
         await _context.CreatePost(post2);
@@ -36,15 +27,17 @@ public class PostTest
         List<Post> posts = await _context.GetAllPosts();
         
         Assert.NotEmpty(posts);
+
+        await _context.DeletePostById(post1.PostId);
+        await _context.DeletePostById(post2.PostId);
+
     }
 
     [Fact]
     public async Task GetPostById_ReturnsPost()
     {
-        var post = new Post{
-            Title = "Test Post",
-            Content = "Test Content",
-        };
+        
+        var post = Helper.GeneratePost();
 
         await _context.CreatePost(post);
 
@@ -53,6 +46,8 @@ public class PostTest
         Assert.NotNull(newPost);
         Assert.Equal(newPost.Title, post.Title);
         Assert.Equal(newPost.Content, post.Content);
+
+        await _context.DeletePostById(post.PostId);
        
     }
 
@@ -71,17 +66,15 @@ public class PostTest
         Assert.Equal(postTitle, post.Title);
         Assert.Equal(postContent, post.Content); 
 
+        await _context.DeletePostById(post.PostId);
+
     }
 
     [Fact]
     public async Task EditPostByIdTest()
     {
-        
-        var post = new Post 
-        {
-            Title = "Post Title",
-            Content = "Post Content"
-        };
+
+        var post = Helper.GeneratePost();
 
         await _context.CreatePost(post);
 
@@ -96,27 +89,24 @@ public class PostTest
         Assert.NotNull(post);
         Assert.Equal(post.Content, updatedPost.Content);
         
-      
+      await _context.DeletePostById(post.PostId);
 
     }
 
     [Fact]
     public async Task DeletePostByIdTest()
     {
-        var post = new Post 
-        {
-            Title = "Post title",
-            Content = "Post Content"
-        };
+        var post1 = Helper.GeneratePost();
+        var post2 = Helper.GeneratePost();
 
-        await _context.CreatePost(post);
+        await _context.CreatePost(post1);
+        await _context.CreatePost(post2);
+
+        await _context.DeletePostById(post1.PostId);
+        await _context.DeletePostById(post2.PostId);
 
         List<Post> posts = await _context.GetAllPosts();
-
-        Assert.NotEmpty(posts);
-
-        await _context.DeletePostById(post.PostId);
-        posts = await _context.GetAllPosts();
-        Assert.Empty(posts);
+        Assert.DoesNotContain(posts, p => p.PostId == post1.PostId);
+        Assert.DoesNotContain(posts, p => p.PostId == post2.PostId);
     }
 }

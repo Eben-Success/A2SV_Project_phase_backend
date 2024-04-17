@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BlogApp.Controllers;
 
-[Route("api/[controller]")]
-[ApiController]
+    [Route("api/[controller]")]
+    [ApiController]
 
     public class CommentController : ControllerBase
     {
@@ -14,14 +14,14 @@ namespace BlogApp.Controllers;
 
         public CommentController(ApiDbContext context){
             _context = context;
-            commentManager = new CommentManager(context);
+            commentManager = new CommentManager(_context);
         }
 
         // Get all Comments
         [HttpGet]
         public async Task<IActionResult> GetAllComment(){
-            var posts = await commentManager.GetAllComment();
-            return Ok(posts);
+            var comments = await commentManager.GetAllComment();
+            return Ok(comments);
         }
 
         // Get comment by Id

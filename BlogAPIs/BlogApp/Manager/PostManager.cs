@@ -1,6 +1,5 @@
 using BlogApp.Models;
 using BlogCrudApp.Data;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace BlogApp.Controllers;
@@ -25,7 +24,7 @@ namespace BlogApp.Controllers;
         // Get Post by Id
         public async Task<Post?> GetPostById(int id)
         {
-            var post = await _context.Posts.FindAsync(id);
+            var post = await _context.Posts.Include(c => c.Comments).FirstOrDefaultAsync(x => x.PostId == id);
             
             if (post == null)
             {
@@ -46,13 +45,13 @@ namespace BlogApp.Controllers;
 
         // Edit post: Update title or content
         public async Task EditPostById(int id, Post updatedPost){
-                var post = await _context.Posts.FindAsync(id);
+                var post = await _context.Posts.FirstOrDefaultAsync(x => x.PostId == id);
 
                 if (post == null){
                     throw new Exception("Invalid Post Id");
                 }
 
-                post.Title = updatedPost.Title;
+                // post.Title = updatedPost.Title;
                 post.Content = updatedPost.Content;
 
                 await _context.SaveChangesAsync();
@@ -61,7 +60,7 @@ namespace BlogApp.Controllers;
 
         // Delete Post
         public async Task DeletePostById(int id){
-                var post = await _context.Posts.FindAsync(id);
+                var post = await _context.Posts.FirstOrDefaultAsync(x => x.PostId == id);
 
                 if (post == null){
                     throw new Exception("Invalid Post Id");
